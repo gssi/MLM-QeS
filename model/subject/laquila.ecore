@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="laquila" nsURI="laquila" nsPrefix="laquila">
+  <eClassifiers xsi:type="ecore:EClass" name="Root">
+    <eAnnotations source="om=smartcity"/>
+    <eAnnotations source="lm"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="__metamodels" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" defaultValueLiteral=""/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="__supplementaries" upperBound="-1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" defaultValueLiteral=""/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="__contains" upperBound="-1"
+        eType="#//EClass" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EClass">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="__name" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" defaultValueLiteral=""/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="__relationNames" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" defaultValueLiteral=""/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="__potency" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" defaultValueLiteral="1-1-*"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="__parentNodes" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" defaultValueLiteral=""/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="__isAbstract" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean" defaultValueLiteral="false"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="__attributeNames" upperBound="-1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" defaultValueLiteral=""/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="__supplementaryNodes" upperBound="-1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" defaultValueLiteral=""/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="EReference" upperBound="-1"
+        eType="#//EClass"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AtlanteComuni" eSuperTypes="#//EClass">
+    <eAnnotations source="type=OpenData"/>
+    <eAnnotations source="suptypes"/>
+    <eAnnotations source="potency=1-1-*"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" upperBound="-2" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject">
+      <eAnnotations source="value">
+        <details key="value" value="Atlante statistico dei comuni"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="url" upperBound="-2" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject">
+      <eAnnotations source="value">
+        <details key="value" value="http://asc.istat.it/asc_BL/"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CityPopulation" eSuperTypes="#//EClass">
+    <eAnnotations source="type=IntegerValue@2"/>
+    <eAnnotations source="suptypes"/>
+    <eAnnotations source="potency=1-1-*"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" upperBound="-2"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject">
+      <eAnnotations source="value">
+        <details key="value" value="69605"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="stCC" upperBound="-1" eType="#//CityCouncil"
+        containment="true">
+      <eAnnotations source="type=src@2"/>
+      <eAnnotations source="potency=1-1-*"/>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="GreenAreas" eSuperTypes="#//EClass">
+    <eAnnotations source="type=DataPackage@2"/>
+    <eAnnotations source="suptypes"/>
+    <eAnnotations source="potency=1-1-*"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dGA" upperBound="-1" eType="#//TotalGreenArea"
+        containment="true">
+      <eAnnotations source="type=data@2"/>
+      <eAnnotations source="potency=1-1-*"/>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="laquila" eSuperTypes="#//EClass">
+    <eAnnotations source="type=SmartCity"/>
+    <eAnnotations source="suptypes"/>
+    <eAnnotations source="potency=1-1-*"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" upperBound="-2" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject">
+      <eAnnotations source="value">
+        <details key="value" value="L'Aquila"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dpGA" upperBound="-1" eType="#//GreenAreas"
+        containment="true">
+      <eAnnotations source="type=dataPackage@2"/>
+      <eAnnotations source="potency=1-1-*"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dpCS" upperBound="-1" eType="#//CityStatistics"
+        containment="true">
+      <eAnnotations source="type=dataPackage@2"/>
+      <eAnnotations source="potency=1-1-*"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="involvesAC" upperBound="-1"
+        eType="#//AtlanteComuni" containment="true">
+      <eAnnotations source="type=involvesOD"/>
+      <eAnnotations source="potency=1-1-*"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="involvesCC" upperBound="-1"
+        eType="#//CityCouncil" containment="true">
+      <eAnnotations source="type=involves@2"/>
+      <eAnnotations source="potency=1-1-*"/>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CityCouncil" eSuperTypes="#//EClass">
+    <eAnnotations source="type=Stakeholder@2"/>
+    <eAnnotations source="suptypes"/>
+    <eAnnotations source="potency=1-1-*"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="organization" upperBound="-2"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject">
+      <eAnnotations source="value">
+        <details key="value" value="Municipality"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CityStatistics" eSuperTypes="#//EClass">
+    <eAnnotations source="type=DataPackage@2"/>
+    <eAnnotations source="suptypes"/>
+    <eAnnotations source="potency=1-1-*"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dCP" upperBound="-1" eType="#//CityPopulation"
+        containment="true">
+      <eAnnotations source="type=data@2"/>
+      <eAnnotations source="potency=1-1-*"/>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TotalGreenArea" eSuperTypes="#//EClass">
+    <eAnnotations source="type=RealValue@2"/>
+    <eAnnotations source="suptypes"/>
+    <eAnnotations source="potency=1-1-*"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" upperBound="-2"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject">
+      <eAnnotations source="value">
+        <details key="value" value="48.7235"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="odAC" upperBound="-1" eType="#//AtlanteComuni"
+        containment="true">
+      <eAnnotations source="type=src@2"/>
+      <eAnnotations source="potency=1-1-*"/>
+    </eStructuralFeatures>
+  </eClassifiers>
+</ecore:EPackage>

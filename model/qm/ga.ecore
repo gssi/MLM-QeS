@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="ga" nsURI="ga" nsPrefix="ga">
+  <eClassifiers xsi:type="ecore:EClass" name="Root">
+    <eAnnotations source="om=kpiss"/>
+    <eAnnotations source="lm"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="__metamodels" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" defaultValueLiteral=""/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="__supplementaries" upperBound="-1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" defaultValueLiteral=""/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="__contains" upperBound="-1"
+        eType="#//EClass" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EClass">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="__name" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" defaultValueLiteral=""/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="__relationNames" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" defaultValueLiteral=""/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="__potency" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" defaultValueLiteral="1-1-*"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="__parentNodes" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" defaultValueLiteral=""/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="__isAbstract" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean" defaultValueLiteral="false"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="__attributeNames" upperBound="-1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" defaultValueLiteral=""/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="__supplementaryNodes" upperBound="-1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" defaultValueLiteral=""/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="EReference" upperBound="-1"
+        eType="#//EClass"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CP" eSuperTypes="#//EClass">
+    <eAnnotations source="type=RealValue@2"/>
+    <eAnnotations source="suptypes"/>
+    <eAnnotations source="potency=1-1-*"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="pCP" upperBound="-1" eType="#//CityPopulation">
+      <eAnnotations source="type=parameter@2"/>
+      <eAnnotations source="potency=1-1-*"/>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CEN" eSuperTypes="#//EClass">
+    <eAnnotations source="type=AggregatedRealValue@2"/>
+    <eAnnotations source="suptypes"/>
+    <eAnnotations source="potency=1-1-*"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="vCP" upperBound="-1" eType="#//CP"
+        containment="true">
+      <eAnnotations source="type=values@2"/>
+      <eAnnotations source="potency=1-1-*"/>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="GreenAreas" eSuperTypes="#//EClass">
+    <eAnnotations source="type=Kpi"/>
+    <eAnnotations source="suptypes"/>
+    <eAnnotations source="potency=1-1-*"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="hasGA" upperBound="-1"
+        eType="#//GA" containment="true">
+      <eAnnotations source="type=has@2"/>
+      <eAnnotations source="potency=1-1-*"/>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="GA" eSuperTypes="#//EClass">
+    <eAnnotations source="type=Value@2"/>
+    <eAnnotations source="suptypes"/>
+    <eAnnotations source="potency=1-1-*"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="vtGA" upperBound="-1" eType="#//DIV"
+        containment="true">
+      <eAnnotations source="type=valuetype@2"/>
+      <eAnnotations source="potency=1-1-*"/>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TGA" eSuperTypes="#//EClass">
+    <eAnnotations source="type=RealValue@2"/>
+    <eAnnotations source="suptypes"/>
+    <eAnnotations source="potency=1-1-*"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="pTGA" upperBound="-1" eType="#//TotalGreenArea">
+      <eAnnotations source="type=parameter@2"/>
+      <eAnnotations source="potency=1-1-*"/>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CityPopulation" eSuperTypes="#//EClass">
+    <eAnnotations source="type=Parameter@2"/>
+    <eAnnotations source="suptypes"/>
+    <eAnnotations source="potency=1-1-*"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SCevaluation" eSuperTypes="#//EClass">
+    <eAnnotations source="type=QualityModel@2"/>
+    <eAnnotations source="suptypes"/>
+    <eAnnotations source="potency=1-1-*"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="cD" upperBound="-1" eType="#//Environment"
+        containment="true">
+      <eAnnotations source="type=contains@2"/>
+      <eAnnotations source="potency=1-1-*"/>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DIV" eSuperTypes="#//EClass">
+    <eAnnotations source="type=AggregatedRealValue@2"/>
+    <eAnnotations source="suptypes"/>
+    <eAnnotations source="potency=1-1-*"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="vTGA" upperBound="-1" eType="#//TGA"
+        containment="true">
+      <eAnnotations source="type=values@2"/>
+      <eAnnotations source="potency=1-1-*"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="vCEN" upperBound="-1" eType="#//CEN"
+        containment="true">
+      <eAnnotations source="type=values@2"/>
+      <eAnnotations source="potency=1-1-*"/>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Environment" eSuperTypes="#//EClass">
+    <eAnnotations source="type=Dimension@2"/>
+    <eAnnotations source="suptypes"/>
+    <eAnnotations source="potency=1-1-*"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="tTGA" upperBound="-1" eType="#//TotalGreenArea"
+        containment="true">
+      <eAnnotations source="type=takes@2"/>
+      <eAnnotations source="potency=1-1-*"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="cGA" upperBound="-1" eType="#//GreenAreas"
+        containment="true">
+      <eAnnotations source="type=collects@2"/>
+      <eAnnotations source="potency=1-1-*"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="tCP" upperBound="-1" eType="#//CityPopulation"
+        containment="true">
+      <eAnnotations source="type=takes@2"/>
+      <eAnnotations source="potency=1-1-*"/>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TotalGreenArea" eSuperTypes="#//EClass">
+    <eAnnotations source="type=Parameter@2"/>
+    <eAnnotations source="suptypes"/>
+    <eAnnotations source="potency=1-1-*"/>
+  </eClassifiers>
+</ecore:EPackage>

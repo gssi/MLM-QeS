@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="abr" nsURI="abr" nsPrefix="abr">
+  <eClassifiers xsi:type="ecore:EClass" name="Root">
+    <eAnnotations source="om=region"/>
+    <eAnnotations source="lm"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="__metamodels" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" defaultValueLiteral=""/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="__supplementaries" upperBound="-1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" defaultValueLiteral=""/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="__contains" upperBound="-1"
+        eType="#//EClass" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EClass">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="__name" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" defaultValueLiteral=""/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="__relationNames" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" defaultValueLiteral=""/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="__potency" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" defaultValueLiteral="1-1-*"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="__parentNodes" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" defaultValueLiteral=""/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="__isAbstract" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean" defaultValueLiteral="false"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="__attributeNames" upperBound="-1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" defaultValueLiteral=""/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="__supplementaryNodes" upperBound="-1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" defaultValueLiteral=""/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="EReference" upperBound="-1"
+        eType="#//EClass"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="BedsTI" eSuperTypes="#//EClass">
+    <eAnnotations source="type=IntegerValue@2"/>
+    <eAnnotations source="suptypes"/>
+    <eAnnotations source="potency=1-1-*"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" upperBound="-2"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject">
+      <eAnnotations source="value">
+        <details key="value" value="1000"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="stASB" upperBound="-1"
+        eType="#//AgenziaSanitaria" containment="true">
+      <eAnnotations source="type=src@2"/>
+      <eAnnotations source="potency=1-1-*"/>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PatientsTI" eSuperTypes="#//EClass">
+    <eAnnotations source="type=IntegerValue@2"/>
+    <eAnnotations source="suptypes"/>
+    <eAnnotations source="potency=1-1-*"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" upperBound="-2"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject">
+      <eAnnotations source="value">
+        <details key="value" value="300"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="stAS" upperBound="-1" eType="#//AgenziaSanitaria"
+        containment="true">
+      <eAnnotations source="type=src@2"/>
+      <eAnnotations source="potency=1-1-*"/>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Healthcare" eSuperTypes="#//EClass">
+    <eAnnotations source="type=DataPackage@2"/>
+    <eAnnotations source="suptypes"/>
+    <eAnnotations source="potency=1-1-*"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dPT" upperBound="-1" eType="#//PatientsTI"
+        containment="true">
+      <eAnnotations source="type=data@2"/>
+      <eAnnotations source="potency=1-1-*"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dBT" upperBound="-1" eType="#//BedsTI"
+        containment="true">
+      <eAnnotations source="type=data@2"/>
+      <eAnnotations source="potency=1-1-*"/>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Abruzzo" eSuperTypes="#//EClass">
+    <eAnnotations source="type=Region"/>
+    <eAnnotations source="suptypes"/>
+    <eAnnotations source="potency=1-1-*"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dpHC" upperBound="-1" eType="#//Healthcare"
+        containment="true">
+      <eAnnotations source="type=dataPackage@2"/>
+      <eAnnotations source="potency=1-1-*"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="involvesAS" upperBound="-1"
+        eType="#//AgenziaSanitaria" containment="true">
+      <eAnnotations source="type=involvesH"/>
+      <eAnnotations source="potency=1-1-*"/>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AgenziaSanitaria" eSuperTypes="#//EClass">
+    <eAnnotations source="type=Hospital"/>
+    <eAnnotations source="suptypes"/>
+    <eAnnotations source="potency=1-1-*"/>
+  </eClassifiers>
+</ecore:EPackage>

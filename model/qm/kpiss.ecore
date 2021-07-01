@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="kpiss" nsURI="kpiss" nsPrefix="kpiss">
+  <eClassifiers xsi:type="ecore:EClass" name="Root">
+    <eAnnotations source="om=qm"/>
+    <eAnnotations source="lm"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="__metamodels" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" defaultValueLiteral=""/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="__supplementaries" upperBound="-1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" defaultValueLiteral=""/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="__contains" upperBound="-1"
+        eType="#//EClass" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EClass">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="__name" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" defaultValueLiteral=""/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="__relationNames" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" defaultValueLiteral=""/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="__potency" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" defaultValueLiteral="1-1-*"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="__parentNodes" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" defaultValueLiteral=""/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="__isAbstract" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean" defaultValueLiteral="false"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="__attributeNames" upperBound="-1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" defaultValueLiteral=""/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="__supplementaryNodes" upperBound="-1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" defaultValueLiteral=""/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="EReference" upperBound="-1"
+        eType="#//EClass"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="StringValue" eSuperTypes="#//EClass">
+    <eAnnotations source="type=SingleValue"/>
+    <eAnnotations source="suptypes"/>
+    <eAnnotations source="potency=1-1-*"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="KpiValue" eSuperTypes="#//EClass">
+    <eAnnotations source="type=Value"/>
+    <eAnnotations source="suptypes"/>
+    <eAnnotations source="potency=1-1-*"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="vtAS" upperBound="-1" eType="#//AggregatedStringValue"
+        containment="true">
+      <eAnnotations source="type=valuetype"/>
+      <eAnnotations source="potency=1-1-*"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="vtAR" upperBound="-1" eType="#//AggregatedRangedValue"
+        containment="true">
+      <eAnnotations source="type=valuetype"/>
+      <eAnnotations source="potency=1-1-*"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="vtB" upperBound="-1" eType="#//BoolValue"
+        containment="true">
+      <eAnnotations source="type=valuetype"/>
+      <eAnnotations source="potency=1-1-*"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="vtS" upperBound="-1" eType="#//StringValue"
+        containment="true">
+      <eAnnotations source="type=valuetype"/>
+      <eAnnotations source="potency=1-1-*"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="vtAB" upperBound="-1" eType="#//AggregatedBoolValue"
+        containment="true">
+      <eAnnotations source="type=valuetype"/>
+      <eAnnotations source="potency=1-1-*"/>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AggregatedRangedValue" eSuperTypes="#//EClass">
+    <eAnnotations source="type=AggregatedValue"/>
+    <eAnnotations source="suptypes"/>
+    <eAnnotations source="potency=1-1-*"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="BoolValue" eSuperTypes="#//EClass">
+    <eAnnotations source="type=SingleValue"/>
+    <eAnnotations source="suptypes"/>
+    <eAnnotations source="potency=1-1-*"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AggregatedBoolValue" eSuperTypes="#//EClass">
+    <eAnnotations source="type=AggregatedValue"/>
+    <eAnnotations source="suptypes"/>
+    <eAnnotations source="potency=1-1-*"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Kpi" eSuperTypes="#//EClass">
+    <eAnnotations source="type=Metric"/>
+    <eAnnotations source="suptypes"/>
+    <eAnnotations source="potency=1-1-*"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="hasK" upperBound="-1" eType="#//KpiValue"
+        containment="true">
+      <eAnnotations source="type=has"/>
+      <eAnnotations source="potency=1-1-*"/>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AggregatedStringValue" eSuperTypes="#//EClass">
+    <eAnnotations source="type=AggregatedValue"/>
+    <eAnnotations source="suptypes"/>
+    <eAnnotations source="potency=1-1-*"/>
+  </eClassifiers>
+</ecore:EPackage>

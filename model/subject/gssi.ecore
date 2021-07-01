@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="gssi" nsURI="gssi" nsPrefix="gssi">
+  <eClassifiers xsi:type="ecore:EClass" name="Root">
+    <eAnnotations source="om=institute"/>
+    <eAnnotations source="lm"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="__metamodels" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" defaultValueLiteral=""/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="__supplementaries" upperBound="-1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" defaultValueLiteral=""/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="__contains" upperBound="-1"
+        eType="#//EClass" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EClass">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="__name" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" defaultValueLiteral=""/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="__relationNames" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" defaultValueLiteral=""/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="__potency" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" defaultValueLiteral="1-1-*"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="__parentNodes" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" defaultValueLiteral=""/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="__isAbstract" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean" defaultValueLiteral="false"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="__attributeNames" upperBound="-1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" defaultValueLiteral=""/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="__supplementaryNodes" upperBound="-1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" defaultValueLiteral=""/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="EReference" upperBound="-1"
+        eType="#//EClass"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MediaCS" eSuperTypes="#//EClass">
+    <eAnnotations source="type=RealValue@2"/>
+    <eAnnotations source="suptypes"/>
+    <eAnnotations source="potency=1-1-*"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" upperBound="-2"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject">
+      <eAnnotations source="value">
+        <details key="value" value="6.0"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="sCS" upperBound="-1" eType="#//Administration"
+        containment="true">
+      <eAnnotations source="type=src@2"/>
+      <eAnnotations source="potency=1-1-*"/>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ComputerScience" eSuperTypes="#//EClass">
+    <eAnnotations source="type=Department"/>
+    <eAnnotations source="suptypes"/>
+    <eAnnotations source="potency=1-1-*"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dCS" upperBound="-1" eType="#//MediaCS"
+        containment="true">
+      <eAnnotations source="type=data@2"/>
+      <eAnnotations source="potency=1-1-*"/>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Mathematics" eSuperTypes="#//EClass">
+    <eAnnotations source="type=Department"/>
+    <eAnnotations source="suptypes"/>
+    <eAnnotations source="potency=1-1-*"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dMT" upperBound="-1" eType="#//MediaMT"
+        containment="true">
+      <eAnnotations source="type=data@2"/>
+      <eAnnotations source="potency=1-1-*"/>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MediaUS" eSuperTypes="#//EClass">
+    <eAnnotations source="type=RealValue@2"/>
+    <eAnnotations source="suptypes"/>
+    <eAnnotations source="potency=1-1-*"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" upperBound="-2"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject">
+      <eAnnotations source="value">
+        <details key="value" value="8.0"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="sUS" upperBound="-1" eType="#//Administration"
+        containment="true">
+      <eAnnotations source="type=src@2"/>
+      <eAnnotations source="potency=1-1-*"/>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="UrbanStudies" eSuperTypes="#//EClass">
+    <eAnnotations source="type=Department"/>
+    <eAnnotations source="suptypes"/>
+    <eAnnotations source="potency=1-1-*"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dUS" upperBound="-1" eType="#//MediaUS"
+        containment="true">
+      <eAnnotations source="type=data@2"/>
+      <eAnnotations source="potency=1-1-*"/>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MediaAP" eSuperTypes="#//EClass">
+    <eAnnotations source="type=RealValue@2"/>
+    <eAnnotations source="suptypes"/>
+    <eAnnotations source="potency=1-1-*"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" upperBound="-2"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject">
+      <eAnnotations source="value">
+        <details key="value" value="2.0"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="sAP" upperBound="-1" eType="#//Administration"
+        containment="true">
+      <eAnnotations source="type=src@2"/>
+      <eAnnotations source="potency=1-1-*"/>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="GSSI" eSuperTypes="#//EClass">
+    <eAnnotations source="type=Institute"/>
+    <eAnnotations source="suptypes"/>
+    <eAnnotations source="potency=1-1-*"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" upperBound="-2" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject">
+      <eAnnotations source="value">
+        <details key="value" value="Gran Sasso Science Institute"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dataCS" upperBound="-1"
+        eType="#//ComputerScience" containment="true">
+      <eAnnotations source="type=dataDP"/>
+      <eAnnotations source="potency=1-1-*"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dataMT" upperBound="-1"
+        eType="#//Mathematics" containment="true">
+      <eAnnotations source="type=dataDP"/>
+      <eAnnotations source="potency=1-1-*"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="involvesA" upperBound="-1"
+        eType="#//Administration" containment="true">
+      <eAnnotations source="type=involvesO"/>
+      <eAnnotations source="potency=1-1-*"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dataUS" upperBound="-1"
+        eType="#//UrbanStudies" containment="true">
+      <eAnnotations source="type=dataDP"/>
+      <eAnnotations source="potency=1-1-*"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dataAP" upperBound="-1"
+        eType="#//AstroparticlePhysiscs" containment="true">
+      <eAnnotations source="type=dataDP"/>
+      <eAnnotations source="potency=1-1-*"/>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MediaMT" eSuperTypes="#//EClass">
+    <eAnnotations source="type=RealValue@2"/>
+    <eAnnotations source="suptypes"/>
+    <eAnnotations source="potency=1-1-*"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" upperBound="-2"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject">
+      <eAnnotations source="value">
+        <details key="value" value="5.0"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="sMT" upperBound="-1" eType="#//Administration"
+        containment="true">
+      <eAnnotations source="type=src@2"/>
+      <eAnnotations source="potency=1-1-*"/>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Administration" eSuperTypes="#//EClass">
+    <eAnnotations source="type=Office"/>
+    <eAnnotations source="suptypes"/>
+    <eAnnotations source="potency=1-1-*"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AstroparticlePhysiscs" eSuperTypes="#//EClass">
+    <eAnnotations source="type=Department"/>
+    <eAnnotations source="suptypes"/>
+    <eAnnotations source="potency=1-1-*"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dAP" upperBound="-1" eType="#//MediaAP"
+        containment="true">
+      <eAnnotations source="type=data@2"/>
+      <eAnnotations source="potency=1-1-*"/>
+    </eStructuralFeatures>
+  </eClassifiers>
+</ecore:EPackage>
