@@ -1,0 +1,22 @@
+
+var root=qm0!EClass.all.selectOne(c|c.name="Root");
+var subject;
+var qm1packagename = root.eAnnotations.selectOne(ea|ea.source.matches("om=[A-Za-z]*")).source.split("=").second;
+var mm=qm1!EPackage.all.selectOne(p|p.name=qm1packagename);
+
+var metricclass= mm.eClassifiers.selectOne(c|c.eAnnotations.source.flatten().includes("type=Metric"));
+var qm0metric=metricclass.name;
+
+for (metric in getMetrics(qm0metric)) { 
+	("Calculating..."+qm0metric+"-->"+metric.name).println();
+	var value=metric.getValue(subject);
+}
+
+operation getMetrics(qm0metric:String){
+var metrics=qm0!EClass.all.select(c|c.eAnnotations.source.flatten().includes("type="+qm0metric));
+return metrics;
+}
+
+operation Any getValue(subject){
+return;
+}

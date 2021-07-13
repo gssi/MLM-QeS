@@ -132,4 +132,14 @@
     <eAnnotations source="suptypes"/>
     <eAnnotations source="potency=1-1-*"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Pollution" eSuperTypes="#//EClass">
+    <eAnnotations source="type=Kpi"/>
+    <eAnnotations source="suptypes"/>
+    <eAnnotations source="potency=1-1-*"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="hasGA" upperBound="-1"
+        eType="#//GA" containment="true">
+      <eAnnotations source="type=has@2"/>
+      <eAnnotations source="potency=1-1-*"/>
+    </eStructuralFeatures>
+  </eClassifiers>
 </ecore:EPackage>
